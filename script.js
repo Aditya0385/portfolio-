@@ -199,7 +199,7 @@ function initHeroWindowPortal() {
         );
 
         cloud.userData = {
-            speed: 0.004 + Math.random() * 0.007
+            speed: 0.001 + Math.random() * 0.002
         };
 
         cloudsGroup.add(cloud);
@@ -257,9 +257,9 @@ function initHeroWindowPortal() {
             }
         });
 
-        // Smooth camera drift target
-        targetX += (mouseX - targetX) * 0.08;
-        targetY += (mouseY - targetY) * 0.08;
+        // Smooth camera drift target (slower transition for premium cinematic feel)
+        targetX += (mouseX - targetX) * 0.025;
+        targetY += (mouseY - targetY) * 0.025;
 
         camera.position.x = targetX * 0.6;
         camera.position.y = -targetY * 0.6;
