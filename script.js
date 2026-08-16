@@ -45,7 +45,7 @@ function initBackgroundParticles() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
     const particlesCount = 700;
@@ -126,13 +126,13 @@ function initHeroWindowPortal() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
 
     // Background airplane view animated canvas texture
     const animCanvas = document.createElement('canvas');
-    animCanvas.width = 960;
-    animCanvas.height = 540;
+    animCanvas.width = 1920;
+    animCanvas.height = 1080;
     const animCtx = animCanvas.getContext('2d');
     const bgTexture = new THREE.CanvasTexture(animCanvas);
 
