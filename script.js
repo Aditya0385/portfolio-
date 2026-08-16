@@ -135,6 +135,10 @@ function initHeroWindowPortal() {
     animCanvas.height = 1080;
     const animCtx = animCanvas.getContext('2d');
     const bgTexture = new THREE.CanvasTexture(animCanvas);
+    bgTexture.generateMipmaps = false;
+    bgTexture.minFilter = THREE.LinearFilter;
+    bgTexture.magFilter = THREE.LinearFilter;
+    bgTexture.anisotropy = renderer.capabilities.getMaxAnisotropy();
 
     const bgGeometry = new THREE.PlaneGeometry(1, 1);
     const bgMaterial = new THREE.MeshBasicMaterial({
@@ -230,13 +234,18 @@ function initHeroWindowPortal() {
         resizeBackgroundPlane();
     });
 
+    let lastFrameIndex = -1;
+
     function animate() {
         requestAnimationFrame(animate);
 
-        // Update animated texture from preloaded frames
-        if (preloadedImages[currentFrameIndex] && preloadedImages[currentFrameIndex].complete) {
-            animCtx.drawImage(preloadedImages[currentFrameIndex], 0, 0, animCanvas.width, animCanvas.height);
-            bgTexture.needsUpdate = true;
+        // Update animated texture from preloaded frames only when it actually changes
+        if (currentFrameIndex !== lastFrameIndex) {
+            if (preloadedImages[currentFrameIndex] && preloadedImages[currentFrameIndex].complete) {
+                animCtx.drawImage(preloadedImages[currentFrameIndex], 0, 0, animCanvas.width, animCanvas.height);
+                bgTexture.needsUpdate = true;
+                lastFrameIndex = currentFrameIndex;
+            }
         }
 
         // Drift clouds
