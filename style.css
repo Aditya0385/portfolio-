@@ -667,6 +667,15 @@ section {
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.window-container:hover .airplane-window {
+    transition: none !important;
+}
+
+.window-container:hover .window-reflection {
+    transition: none !important;
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .hero-container-layout {
