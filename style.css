@@ -775,3 +775,110 @@ section {
     background-color: #e8f4f8 !important;
 }
 
+/* 4K and High-Resolution Monitors Optimization */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    #cabin-window-frame {
+        width: 700px;
+        height: 920px;
+        border-radius: 350px 350px 230px 230px;
+        border-width: 30px;
+    }
+    .giant-window-content {
+        width: 700px;
+        height: 920px;
+        padding: 120px 80px;
+    }
+    .floating-hero-card {
+        width: 380px;
+    }
+    .project-card {
+        height: 450px;
+    }
+    .display-5 {
+        font-size: 3.5rem;
+    }
+    .section-title {
+        font-size: 3rem;
+    }
+    .navbar-custom .nav-link {
+        font-size: 1.05rem;
+    }
+    body {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 2560px) {
+    .container {
+        max-width: 2000px;
+    }
+    #cabin-window-frame {
+        width: 850px;
+        height: 1100px;
+        border-radius: 425px 425px 280px 280px;
+        border-width: 36px;
+    }
+    .giant-window-content {
+        width: 850px;
+        height: 1100px;
+        padding: 150px 100px;
+    }
+    .floating-hero-card {
+        width: 440px;
+    }
+    .project-card {
+        height: 500px;
+    }
+    .display-5 {
+        font-size: 4.2rem;
+    }
+    .section-title {
+        font-size: 3.5rem;
+    }
+    .navbar-custom .nav-link {
+        font-size: 1.15rem;
+    }
+    body {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 3840px) {
+    .container {
+        max-width: 2800px;
+    }
+    #cabin-window-frame {
+        width: 1200px;
+        height: 1550px;
+        border-radius: 600px 600px 400px 400px;
+        border-width: 48px;
+    }
+    .giant-window-content {
+        width: 1200px;
+        height: 1550px;
+        padding: 200px 150px;
+    }
+    .floating-hero-card {
+        width: 550px;
+    }
+    .project-card {
+        height: 600px;
+    }
+    .display-5 {
+        font-size: 5.5rem;
+    }
+    .section-title {
+        font-size: 4.5rem;
+    }
+    .navbar-custom .nav-link {
+        font-size: 1.35rem;
+    }
+    body {
+        font-size: 1.4rem;
+    }
+}
+
+
