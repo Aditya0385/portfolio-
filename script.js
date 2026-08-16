@@ -348,6 +348,7 @@ function initTypingEffect() {
 function initScrollSpy() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.navbar-custom .nav-link');
+    const navbar = document.querySelector('.navbar-custom');
 
     window.addEventListener('scroll', () => {
         let current = '';
@@ -366,6 +367,14 @@ function initScrollSpy() {
                 link.classList.add('active');
             }
         });
+
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
     });
 }
 

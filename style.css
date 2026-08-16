@@ -84,6 +84,15 @@ h1, h2, h3, h4, h5, h6, .outfit {
     transition: var(--transition-smooth);
 }
 
+.navbar-custom.scrolled {
+    background: rgba(15, 18, 25, 0.9) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
 .navbar-custom .navbar-brand {
     font-weight: 800;
     font-size: 1.2rem;
