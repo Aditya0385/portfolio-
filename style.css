@@ -234,17 +234,6 @@ h1, h2, h3, h4, h5, h6, .outfit {
     overflow: hidden;
 }
 
-/* Background Canvas - subtle depth particles */
-#canvas-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-    pointer-events: none;
-}
-
 /* Fullscreen Cabin Window Frame Background */
 #cabin-window-frame {
     position: fixed;
@@ -262,10 +251,14 @@ h1, h2, h3, h4, h5, h6, .outfit {
         0 0 0 9999px #0f1219, /* covers the rest of the screen */
         0 0 50px rgba(64, 169, 255, 0.25);
     overflow: hidden;
-    z-index: 1;
+    z-index: -1;
     pointer-events: none;
     perspective: 1200px;
     transition: transform 0.08s ease-out;
+}
+
+#canvas-container {
+    z-index: -2 !important;
 }
 
 .hero-window-reflection {
@@ -289,8 +282,6 @@ h1, h2, h3, h4, h5, h6, .outfit {
     align-items: center;
     justify-content: center;
     pointer-events: auto;
-    position: relative;
-    z-index: 5;
 }
 
 .btn-window-action {
@@ -356,7 +347,6 @@ h1, h2, h3, h4, h5, h6, .outfit {
 section {
     padding: 120px 0;
     position: relative;
-    z-index: 5;
 }
 
 .bg-dark-accent {
@@ -729,15 +719,13 @@ section {
         text-align: center;
     }
     #cabin-window-frame {
-        width: 90vw;
-        max-width: 450px;
+        width: 450px;
         height: 600px;
         border-radius: 225px 225px 150px 150px;
         border-width: 18px;
     }
     .giant-window-content {
-        width: 90vw;
-        max-width: 450px;
+        width: 450px;
         height: 600px;
         padding: 80px 30px;
     }
@@ -778,15 +766,13 @@ section {
         width: 80%;
     }
     #cabin-window-frame {
-        width: 90vw;
-        max-width: 320px;
+        width: 320px;
         height: 480px;
         border-radius: 160px 160px 100px 100px;
         border-width: 14px;
     }
     .giant-window-content {
-        width: 90vw;
-        max-width: 320px;
+        width: 320px;
         height: 480px;
         padding: 50px 20px;
     }
