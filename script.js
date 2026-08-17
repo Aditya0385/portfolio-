@@ -25,11 +25,6 @@ function updateFrameOnScroll() {
     
     // Multiply by totalFrames so we go from 0 to 59
     currentFrameIndex = Math.min(totalFrames - 1, Math.floor(scrollProgress * totalFrames));
-    
-    const aboutWindow = document.querySelector('.airplane-window');
-    if (aboutWindow && preloadedImages[currentFrameIndex] && preloadedImages[currentFrameIndex].src) {
-        aboutWindow.style.backgroundImage = `url('${preloadedImages[currentFrameIndex].src}')`;
-    }
 }
 
 window.addEventListener('scroll', () => {
