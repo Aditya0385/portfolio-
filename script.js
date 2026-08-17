@@ -15,9 +15,29 @@ function preloadFrames() {
 preloadFrames();
 
 let currentFrameIndex = 0;
-setInterval(() => {
-    currentFrameIndex = (currentFrameIndex + 1) % totalFrames;
-}, 41); // ~24 FPS
+
+function updateFrameOnScroll() {
+    const scrollableDistance = document.documentElement.scrollHeight - window.innerHeight;
+    let scrollProgress = 0;
+    if (scrollableDistance > 0) {
+        scrollProgress = Math.max(0, Math.min(1, window.scrollY / scrollableDistance));
+    }
+    
+    // Multiply by totalFrames so we go from 0 to 59
+    currentFrameIndex = Math.min(totalFrames - 1, Math.floor(scrollProgress * totalFrames));
+    
+    const aboutWindow = document.querySelector('.airplane-window');
+    if (aboutWindow && preloadedImages[currentFrameIndex] && preloadedImages[currentFrameIndex].src) {
+        aboutWindow.style.backgroundImage = `url('${preloadedImages[currentFrameIndex].src}')`;
+    }
+}
+
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(updateFrameOnScroll);
+});
+
+// Initialize first frame
+updateFrameOnScroll();
 
 document.addEventListener('DOMContentLoaded', () => {
     // initBackgroundParticles(); // Disabled to allow fullscreen animated flight portal background
